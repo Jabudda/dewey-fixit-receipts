@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dewey Fixit Sources</title>
+<meta name="description" content="Sources for every fact in the Dewey Fixit and Smuchgum Files Shorts, one row per episode.">
+<style>
+/* Layout: one narrow reading column; each episode is a row with a verdict chip, the claim, the one fact and its numbered sources. */
+:root {
+  --bg: #f6efe0;        /* stage-card cream */
+  --paper: #fffaf0;
+  --ink: #23180f;
+  --muted: #6f5a47;
+  --rule: #e2d4bb;
+  --red: #b5161a;       /* marquee red */
+  --true: #1e7a3f;
+  --false: #b5161a;
+  --half: #a36a00;
+  --link: #1f4f9a;
+  --display: "Rockwell", "Roboto Slab", "Georgia", serif;
+  --body: "Iowan Old Style", "Palatino Linotype", "Georgia", serif;
+  --ui: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1b1510; --paper: #241c15; --ink: #f2e8d6; --muted: #b8a58c; --rule: #3a2e22; --red: #ff6b5e; --true: #5fcf8a; --false: #ff6b5e; --half: #e8b14a; --link: #8fb8ff; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 17px/1.55 var(--body); }
+.wrap { max-width: 760px; margin: 0 auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { border-bottom: 3px double var(--rule); padding-bottom: 20px; margin-bottom: 8px; }
+.kicker { font: 600 12px/1 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+h1 { font: 700 clamp(30px, 6vw, 44px)/1.1 var(--display); margin: 10px 0 12px; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0; max-width: 62ch; }
+.lede a { color: var(--link); }
+.tip { font: 14px/1.5 var(--ui); color: var(--muted); margin-top: 12px; }
+ol.eps { list-style: none; margin: 0; padding: 0; }
+.ep { padding: 22px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 8px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; font: 13px/1 var(--ui); color: var(--muted); }
+.series { letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+.chip { font: 700 12px/1 var(--ui); letter-spacing: .08em; padding: 5px 8px; border: 2px solid currentColor; border-radius: 4px; transform: rotate(-2deg); }
+.chip.true { color: var(--true); } .chip.false { color: var(--false); } .chip.half { color: var(--half); } .chip.myth { color: var(--false); } .chip.fact { color: var(--true); }
+.ep h2 { font: 700 22px/1.25 var(--display); margin: 0; text-wrap: balance; }
+.fact { margin: 0; }
+.src { margin: 4px 0 0; padding-left: 22px; font: 15px/1.5 var(--ui); }
+.src li { margin: 3px 0; overflow-wrap: anywhere; }
+.src a { color: var(--link); text-underline-offset: 2px; }
+.src a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+footer { margin-top: 32px; font: 14px/1.5 var(--ui); color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Dewey Fixit · The Smuchgum Files</div>
+  <h1>Sources</h1>
+  <p class="lede">Every fact in our Shorts comes from somewhere you can check. One row per episode, newest first. The cartoons are jokes; the facts are not.</p>
+  <p class="tip">Links in YouTube Shorts descriptions can't be tapped, so they all live here. Channel: <a href="https://www.youtube.com/@Dewey_Fixit">@Dewey_Fixit</a></p>
+</header>
+
+<ol class="eps">
+
+<li class="ep" id="pigeon">
+  <div class="meta"><span class="series">True or False? #1</span><span class="chip true">TRUE</span></div>
+  <h2>A famous psychologist built a missile steered by pigeons.</h2>
+  <p class="fact">In World War Two, B. F. Skinner's Project Pigeon trained three pigeons to peck at screens inside a glide bomb's nose cone to keep it on target. It was cancelled in 1944, revived by the Navy as Project ORCON in 1948, and dropped in 1953. Skinner (died 1990) received the 2024 Ig Nobel Peace Prize for it.</p>
+  <ol class="src">
+    <li><a href="https://www.smithsonianmag.com/smithsonian-institution/bf-skinners-pigeon-guided-rocket-53443995/">Smithsonian Magazine: B.F. Skinner's Pigeon-Guided Rocket</a></li>
+    <li><a href="https://www.bfskinner.org/newtestsite/wp-content/uploads/2014/02/Pigeons-in-a-Pelican-pt1.pdf">B. F. Skinner, "Pigeons in a Pelican," American Psychologist, 1960 (PDF)</a></li>
+    <li><a href="https://improbable.com/ig/winners/">Improbable Research: Ig Nobel Prize winners (2024 Peace Prize)</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="excel-map">
+  <div class="meta"><span class="series">Willie Automates It #2</span></div>
+  <h2>Make a map in Excel with TypeScript</h2>
+  <p class="fact">An Office Script can add a region map chart (<code>ExcelScript.ChartType.regionMap</code>). Map charts need Microsoft 365 and shade regions such as countries, states, counties and postal codes, not street addresses.</p>
+  <ol class="src">
+    <li><a href="https://support.microsoft.com/en-us/office/create-a-map-chart-in-excel-f2cfed55-d622-42cd-8ec9-ec8a358b593b">Microsoft Support: Create a Map chart in Excel</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.charttype">Microsoft Learn: ExcelScript.ChartType enum</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="clean-up">
+  <div class="meta"><span class="series">Willie Automates It #1</span></div>
+  <h2>Clean up any messy export in one click</h2>
+  <p class="fact">Office Scripts are written in TypeScript and run from Excel's Automate tab with a work or school Microsoft 365 account.</p>
+  <ol class="src">
+    <li><a href="https://learn.microsoft.com/en-us/office/dev/scripts/develop/scripting-fundamentals">Microsoft Learn: Office Scripts fundamentals</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="close-apps">
+  <div class="meta"><span class="series">The Fixit Crew</span><span class="chip myth">MYTH</span></div>
+  <h2>Does closing your apps save battery?</h2>
+  <p class="fact">Apple says force-closing apps unnecessarily can slow your device, because reopened apps reload all their data. In 2016 Apple's Craig Federighi answered "No and no" when asked if quitting apps helps battery life.</p>
+  <ol class="src">
+    <li><a href="https://support.apple.com/en-us/102598">Apple Support: If your iPhone or iPad is running slow</a></li>
+    <li><a href="https://www.macrumors.com/2016/03/10/force-quitting-apps-doesnt-help-battery/">MacRumors: Federighi's reply (2016)</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="buddy-system">
+  <div class="meta"><span class="series">Ask Andy? · The 50 Laws of Office Politics</span></div>
+  <h2>The Buddy System (Law #2)</h2>
+  <p class="fact">Robert Greene's Law 2: "Never put too much trust in friends." His example: Emperor Michael III made his friend Basil co-emperor in 866; Basil had him killed in 867 and became Basil I.</p>
+  <ol class="src">
+    <li><a href="https://www.shortform.com/blog/48-laws-of-power-law-2-never-put-too-much-trust-in-friends/">Shortform: 48 Laws of Power, Law 2</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Basil_I">Wikipedia: Basil I</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Friendship_(village),_Wisconsin">Wikipedia: Friendship, Wisconsin (our viewer's hometown)</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="ai-snitch">
+  <div class="meta"><span class="series">Ask Andy?</span></div>
+  <h2>Will your AI snitch on you?</h2>
+  <p class="fact">Police generally need a warrant to search a seized phone (Riley v. California, 2014). In United States v. Heppner (S.D.N.Y. 2026), a defendant's own chats with a consumer AI were found not to be attorney-client privileged. Educational satire, not legal advice.</p>
+  <ol class="src">
+    <li><a href="https://www.law.cornell.edu/supremecourt/text/13-132">Cornell LII: Riley v. California, 573 U.S. 373 (2014)</a></li>
+    <li><a href="https://www.hsfkramer.com/insights/2026-02/new-york-court-finds-that-client-chats-with-claude-are-not-privileged">HSF Kramer: US v. Heppner summary</a></li>
+    <li><a href="https://www.proskauer.com/alert/sdny-addresses-privilege-and-work-product-implications-of-using-unsecured-public-ai-tools">Proskauer: SDNY on privilege and public AI tools</a></li>
+    <li><a href="https://cdn.openai.com/pdf/openai-law-enforcement-policy-v.2025-12.pdf">OpenAI: law enforcement policy (PDF)</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="excel-limit">
+  <div class="meta"><span class="series">Ask Andy?</span></div>
+  <h2>How do you map 8,675,309 employees every month?</h2>
+  <p class="fact">One Excel worksheet holds at most 1,048,576 rows, so 8,675,309 people need nine sheets. That's about 1 in 20 workers in the US civilian labor force.</p>
+  <ol class="src">
+    <li><a href="https://support.microsoft.com/en-us/office/excel-specifications-and-limits-1672b34d-7043-467e-8e27-269d656771c3">Microsoft Support: Excel specifications and limits</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/office/dev/scripts/develop/scripting-fundamentals">Microsoft Learn: Office Scripts fundamentals</a></li>
+    <li><a href="https://www.bls.gov/opub/ted/2026/4-9-percent-of-the-civilian-labor-force-were-veterans-in-2025.htm">US Bureau of Labor Statistics: 2025 civilian labor force</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="office-politics">
+  <div class="meta"><span class="series">Ask Andy?</span></div>
+  <h2>How do you win at office politics?</h2>
+  <p class="fact">In FDA-regulated records, "Record changes shall not obscure previously recorded information" (21 CFR 11.10(e)). ISO 9001 also asks for control of document changes.</p>
+  <ol class="src">
+    <li><a href="https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-11/subpart-B/section-11.10">eCFR: 21 CFR 11.10</a></li>
+    <li><a href="https://www.isotracker.com/blog/document-control-in-iso-90012015-what-the-standard-requires/">ISO 9001 document control (overview)</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="resume">
+  <div class="meta"><span class="series">Ask Andy?</span><span class="chip myth">MYTH</span></div>
+  <h2>244 people applied for your job. Now what?</h2>
+  <p class="fact">Jobs drew 244 applications on average in 2025. The "robots reject 75% of résumés" stat traces back to a 2012 sales pitch; in a 2025 survey, 23 of 25 recruiters said their system doesn't auto-reject résumés.</p>
+  <ol class="src">
+    <li><a href="https://www.greenhouse.com/recruiting-benchmarks">Greenhouse: The Hire Standard 2026</a></li>
+    <li><a href="https://futureofgood.co/what-everyone-gets-wrong-about-the-modern-job-search-and-what-actually-works/">Future of Good: where the 75% myth came from</a></li>
+    <li><a href="https://enhancv.com/blog/does-ats-reject-resumes/">Enhancv: recruiter survey</a></li>
+    <li><a href="https://itbrief.co.uk/story/study-reveals-ats-rarely-auto-rejects-cvs-debunks-75-myth">IT Brief: coverage of the survey</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="incognito">
+  <div class="meta"><span class="series">The Smuchgum Files</span><span class="chip myth">MYTH</span></div>
+  <h2>Does incognito mode make you invisible?</h2>
+  <p class="fact">Google's own help pages say Incognito doesn't hide your browsing from the websites you visit, your employer or school, or your internet provider. Google settled a class action over Incognito tracking.</p>
+  <ol class="src">
+    <li><a href="https://support.google.com/chrome/answer/95464">Chrome Help: Browse in Incognito mode</a></li>
+    <li><a href="https://support.google.com/chrome/answer/9845881">Chrome Help: How Incognito keeps your browsing private</a></li>
+    <li><a href="https://entrepreneur.com/business-news/google-will-delete-chrome-incognito-browser-history-lawsuit/472050">Entrepreneur: the settlement</a></li>
+    <li><a href="https://www.tbsnews.net/tech/google-destroy-browsing-data-settle-incognito-mode-lawsuit-820856">TBS News: the settlement</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="flushable">
+  <div class="meta"><span class="series">The Smuchgum Files</span><span class="chip myth">MYTH</span></div>
+  <h2>Why can't you flush a "flushable" wipe?</h2>
+  <p class="fact">In a 2019 study of 101 single-use products, 23 of them labeled flushable, no wipe passed the wastewater industry's tests. Only toilet paper did.</p>
+  <ol class="src">
+    <li><a href="https://www.torontomu.ca/news-events/news/2019/04/what-not-to-flush/">Toronto Metropolitan University: What not to flush</a></li>
+    <li><a href="https://www.torontomu.ca/content/dam/water/Research/-2022/20190404_Flushabilityreport.pdf">The flushability report (PDF)</a></li>
+    <li><a href="https://toronto.ctvnews.ca/flushable-wipes-should-actually-be-tossed-in-the-trash-study-finds-1.4366538">CTV News: coverage of the study</a></li>
+    <li><a href="https://undark.org/2019/12/23/flushable-wipes/">Undark: the industry dispute</a></li>
+    <li><a href="https://itv.com/news/london/2017-09-12/fatberg-the-weight-of-of-11-double-decker-buses-blocks-whitechapel-sewer">ITV: the Whitechapel fatberg</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="wet-phone">
+  <div class="meta"><span class="series">The Fixit Crew</span><span class="chip myth">MYTH</span></div>
+  <h2>Should you put a wet phone in rice?</h2>
+  <p class="fact">Apple says not to: tap the phone gently to get the liquid out, let it air-dry, and wait at least 30 minutes before charging.</p>
+  <ol class="src">
+    <li><a href="https://support.apple.com/en-us/102643">Apple Support: liquid-detection alert on iPhone</a></li>
+    <li><a href="https://www.macworld.com/article/2239742/iphone-liquid-damage-dry-rice.html">Macworld: Apple's warning</a></li>
+    <li><a href="https://9to5mac.com/2024/02/19/dont-put-a-wet-iphone-into-rice/">9to5Mac: don't put a wet iPhone in rice</a></li>
+    <li><a href="https://www.gazelle.com/thehorn/wp-content/uploads/2014/05/Water-Damage-Prevention-and-Recovery.pdf">Gazelle: drying test (PDF)</a></li>
+  </ol>
+</li>
+
+<li class="ep" id="hurricane">
+  <div class="meta"><span class="series">Standalone</span><span class="chip myth">BAD IDEA</span></div>
+  <h2>Why don't we just nuke a hurricane?</h2>
+  <p class="fact">NOAA: a mature hurricane releases heat equal to a 10-megaton nuclear bomb every 20 minutes, and a bomb "might not even alter the storm." The trade winds would carry the radioactive fallout over land.</p>
+  <ol class="src">
+    <li><a href="https://www.aoml.noaa.gov/hrd/tcfaq/C5c.html">NOAA Hurricane Research Division: Why don't we nuke hurricanes?</a></li>
+    <li><a href="https://www.nationalgeographic.com/science/article/hurricanes-weather-history-nuclear-weapons">National Geographic: the history of a really bad idea</a></li>
+    <li><a href="https://wtop.com/weather-news/2019/08/why-not-bomb-a-hurricane-noaa-gets-asked-about-it-all-the-time/">WTOP/CNN: NOAA gets asked this all the time</a></li>
+  </ol>
+</li>
+
+</ol>
+
+<footer>
+  Spotted a mistake? Tell us in the comments on the episode and we'll fix it here.<br>
+  The Smuchgum Files: Characters of Questionable Character. What Could Possibly Go Wrong?
+</footer>
+</div>
+</body>
+</html>
