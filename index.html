@@ -52,6 +52,9 @@ ol.eps { list-style: none; margin: 0; padding: 0; }
 .ep[data-reveal]:not(.open) .ans, .ep[data-reveal]:not(.open) .chip.verdict { display: none; }
 .ep[data-reveal]:not(.open) .lock { display: block; }
 .ep[data-reveal].open .chip.locked { display: none; }
+.steps { margin: 4px 0 0; padding-left: 22px; font: 16px/1.55 var(--ui); }
+.steps li { margin: 4px 0; }
+kbd { font: 600 13px/1 var(--ui); padding: 2px 6px; border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 4px; background: rgba(127,127,127,.08); }
 footer { margin-top: 32px; font: 14px/1.5 var(--ui); color: var(--muted); }
 </style>
 </head>
@@ -65,6 +68,27 @@ footer { margin-top: 32px; font: 14px/1.5 var(--ui); color: var(--muted); }
 </header>
 
 <ol class="eps">
+
+<li class="ep" id="excel-witness-protection">
+  <div class="meta"><span class="series">Willie Fixit's Excel Quick Tips #1</span></div>
+  <h2>Excel's Witness Protection Program: hide the extra columns and rows, turn a sheet into a dashboard</h2>
+  <p class="fact">Excel's last column is XFD (column 16,384) and its last row is 1,048,576. Keep the table and chart on the left, put supporting formulas off to the right, then hide everything you don't want people scrolling through.</p>
+  <ol class="steps">
+    <li>Click the column header just right of your dashboard (for example column I) to select the whole column.</li>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>→</kbd> (Mac: <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>→</kbd>). If the selection stops at your formula columns, press it again until it reaches column XFD.</li>
+    <li>Right-click any selected column header and choose <b>Hide</b>.</li>
+    <li>Click the row header just below your dashboard, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>↓</kbd> (Mac: <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>↓</kbd>) to reach row 1,048,576, right-click, and choose <b>Hide</b>.</li>
+    <li>On the <b>View</b> tab, uncheck <b>Gridlines</b> and <b>Headings</b>.</li>
+    <li>To bring them back: select the columns on both sides of the hidden ones (or press <kbd>Ctrl</kbd>+<kbd>A</kbd>), right-click a header, and choose <b>Unhide</b>.</li>
+  </ol>
+  <p class="fact">Hidden is not secret: anyone can unhide. To stop that, use Review &gt; Protect Sheet and leave "Format columns" and "Format rows" unchecked.</p>
+  <ol class="src">
+    <li><a href="https://support.microsoft.com/en-us/office/excel-specifications-and-limits-1672b34d-7043-467e-8e27-269d656771c3">Microsoft Support: Excel specifications and limits</a></li>
+    <li><a href="https://support.microsoft.com/en-us/office/hide-or-show-rows-or-columns-659c2cad-802e-44ee-a614-dde8443579f8">Microsoft Support: Hide or show rows or columns</a></li>
+    <li><a href="https://support.microsoft.com/en-us/excel/show-or-hide-gridlines-on-a-worksheet">Microsoft Support: Show or hide gridlines on a worksheet</a></li>
+    <li><a href="https://support.microsoft.com/en-us/office/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6">Microsoft Support: Protect a worksheet</a></li>
+  </ol>
+</li>
 
 <li class="ep" id="playdoh" data-reveal="2026-11-10T21:00:00Z">
   <div class="meta"><span class="series">True or False? #6</span><span class="chip true verdict">TRUE</span><span class="chip locked">LOCKED</span></div>
